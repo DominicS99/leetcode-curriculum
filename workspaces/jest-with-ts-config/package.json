@@ -1,12 +1,12 @@
 {
-  "name": "@code-chronicles/util",
+  "name": "@code-chronicles/jest-with-ts-config",
   "version": "0.0.1",
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/code-chronicles-code/leetcode-curriculum.git",
-    "directory": "workspaces/util"
+    "directory": "workspaces/jest-with-ts-config"
   },
   "author": {
     "name": "Miorel-Lucian Palii",
@@ -14,31 +14,26 @@
   },
   "type": "module",
   "exports": {
-    "./*": "./src/*.ts",
-    "./__tests__/*": null
+    ".": null,
+    "./*": null
   },
   "scripts": {
     "format": "prettier --color --write .",
     "lint": "eslint --color --max-warnings=0 .",
-    "test": "yarn cross-env 'JEST_WITH_TS_CONFIG_WD=$INIT_CWD' yarn workspace @code-chronicles/jest-with-ts-config start",
+    "start": "tsx src/main.ts",
     "typecheck": "tsc --pretty --project ."
   },
-  "peerDependencies": {
+  "dependencies": {
+    "@code-chronicles/util": "workspace:*",
     "invariant": "2.2.4",
-    "nullthrows": "*",
-    "zod": "3.23.8"
+    "typescript": "5.6.2"
   },
   "devDependencies": {
     "@code-chronicles/eslint-config": "workspace:*",
-    "@jest/globals": "29.7.0",
+    "@types/invariant": "2.2.37",
     "@types/node": "22.5.5",
-    "cross-env": "7.0.3",
     "eslint": "9.11.0",
-    "jest": "29.7.0",
     "prettier": "3.3.3",
-    "ts-jest": "29.2.5",
-    "ts-node": "10.9.2",
-    "type-fest": "4.26.1",
-    "typescript": "5.6.2"
+    "tsx": "4.19.1"
   }
 }
